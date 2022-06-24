@@ -1,0 +1,38 @@
+import random
+
+def game(a,b):
+    if(a==b):
+        return None
+    elif(b=="Stone"):
+        if(a=="Paper"):
+            return True
+        elif(a=="Secissor"):
+            return False
+    elif(b=="Paper"):
+        if(a=="Secissor"):
+            return True
+        elif(a=="Stone"):
+            return False
+    elif(b=="Secissor"):
+        if(a=="Stone"):
+            return True
+        elif(a=="Paper"):
+            return False
+
+l1= ["Stone","Paper","Secissor"]
+
+print(f"Choose one from Following {l1} ")
+a = input("Enter the Choosed Word ")
+
+words = ["Stone","Paper","Secissor"] 
+b = random.choice(words)
+print(f"Bot has Chossed {b}")
+
+c = game(a,b)
+
+if c == None:
+    print("The game is a tie!")
+elif c:
+    print("You Win!")
+else:
+    print("You Lose!")
